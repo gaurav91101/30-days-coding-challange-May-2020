@@ -1,0 +1,27 @@
+// The API isBadVersion is defined for you.
+// bool isBadVersion(int version);
+
+#define ll long long int 
+class Solution {
+public:
+    ll firstBadVersion(int n)
+    {
+        ll i=1;
+        ll j=n;
+        while(i<=j)
+        { 
+            if (i==j)
+                break;
+            
+            ll mid=(i+j)/2;
+            
+            if(isBadVersion(mid)==false)
+                  i=mid+1;
+            else
+                 j=mid;
+        } 
+        return j;
+    
+    }
+};
+
